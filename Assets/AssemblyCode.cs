@@ -144,7 +144,7 @@ public class AssemblyCode : MonoBehaviour
         if (Regex.IsMatch(parameters[0], @"^\s*L\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
             if (parameters.Length < 2) { yield return "sendtochaterror Please specify how many times you want this button to be pressed (from 1 to 80.)"; yield break; }
-            if (int.TryParse(parameters[1], out j))
+            if (int.TryParse(parameters[1], out int j))
             {
                 yield return null;
                 for (int i = 0; i < j%81; i++)
@@ -162,7 +162,7 @@ public class AssemblyCode : MonoBehaviour
         else if (Regex.IsMatch(parameters[0], @"^\s*R\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
             if (parameters.Length < 2) { yield return "sendtochaterror Please specify how many times you want this button to be pressed (from 1 to 80.)"; yield break; }
-            if (int.TryParse(parameters[1], out j))
+            if (int.TryParse(parameters[1], out int j))
             {
                 yield return null;
                 for (int i = 0; i < j%81; i++)
